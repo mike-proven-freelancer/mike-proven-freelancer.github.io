@@ -173,6 +173,99 @@ body {
   color: var(--grey-mid);
 }
 
+/* Project card (first project) */
+.projects__card {
+  display: block;
+  background: var(--white);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  transition: box-shadow 0.2s ease;
+}
+.projects__card:hover {
+  box-shadow: 0 4px 16px rgba(12, 74, 110, 0.15);
+}
+.projects__card-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.projects__card-body {
+  padding: 1rem 1.25rem;
+}
+.projects__card-title {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--blue-deep);
+}
+.projects__card-desc {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--grey-dark);
+  line-height: 1.5;
+}
+
+/* --- Projects Blog --- */
+.blog.section {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+.blog__title {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--blue-deep);
+}
+.blog__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.blog__item {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+.blog__link {
+  display: block;
+  font-weight: 600;
+  color: var(--blue-mid);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+.blog__link:hover {
+  color: var(--blue-deep);
+  text-decoration: underline;
+}
+.blog__desc {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--grey-mid);
+}
+.blog__placeholder {
+  background: var(--white);
+  border: 2px dashed var(--grey-light);
+  border-radius: var(--radius-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 5rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+.blog__placeholder-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--grey-mid);
+}
+
 /* --- Footer --- */
 .footer {
   padding: 1.5rem;
