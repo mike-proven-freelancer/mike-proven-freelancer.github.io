@@ -1,0 +1,97 @@
+{
+  "exported_at": "2024-04-01T00:00:00Z",
+  "source": "BrightWave Platform API v2",
+  "data": {
+    "rows": [
+      {
+        "post_id": "CONT-001",
+        "dt": "2024-01-15",
+        "impressions": "12400",
+        "likes": 312,
+        "shares": 45,
+        "clicks": 890,
+        "comments": 28
+      },
+      {
+        "post_id": "CONT-001",
+        "dt": "01/16/2024",
+        "impressions": 5300,
+        "likes": "118",
+        "shares": 19,
+        "clicks": 402
+      },
+      {
+        "post_id": "CONT-002",
+        "dt": "2024-01-17",
+        "impressions": 8700,
+        "likes": 201,
+        "shares": 33,
+        "clicks": 521,
+        "comments": 15
+      },
+      {
+        "post_id": "CONT-002",
+        "date": "2024-01-18",
+        "impressions": 4200,
+        "likes": 98,
+        "shares": 12,
+        "clicks": 287
+      },
+      {
+        "post_id": "CONT-003",
+        "dt": "2024-01-19",
+        "impressions": 15600,
+        "likes": 445,
+        "shares": 67,
+        "clicks": 1203,
+        "comments": 52
+      },
+      {
+        "post_id": "CONT-003",
+        "dt": "1/20/2024",
+        "impressions": "7200",
+        "likes": "198",
+        "shares": "",
+        "clicks": 534,
+        "comments": 22
+      },
+      {
+        "post_id": "CONT-004",
+        "dt": "2024-01-21",
+        "impressions": 9800,
+        "likes": 267,
+        "shares": 41,
+        "clicks": 678,
+        "comments": 19
+      },
+      {
+        "post_id": "CONT-004",
+        "dt": "2024-01-22",
+        "impressions": 4100,
+        "likes": null,
+        "shares": 8,
+        "clicks": 234,
+        "comments": 7
+      },
+      {
+        "post_id": "CONT-005",
+        "dt": "2024-01-23",
+        "impressions": 11200,
+        "likes": 334,
+        "shares": 55,
+        "clicks": 892,
+        "comments": 31
+      },
+      {
+        "post_id": "CONT-001",
+        "dt": "2024-01-15",
+        "impressions": "12400",
+        "likes": 312,
+        "shares": 45,
+        "clicks": 890,
+        "comments": 28
+      }
+    ]
+  },
+  "notes": "Some dates in MM/DD/YYYY; impressions may be string; duplicate rows possible from export retry."
+}

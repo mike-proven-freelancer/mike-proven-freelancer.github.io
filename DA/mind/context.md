@@ -1,0 +1,1 @@
+# Context index\n\nFor continuity across AIs:\n\n1. Read mind/ (phase state, decisions, glossary).\n2. Read chats/README.md then relevant transcripts in chats/.\n\nKey transcript:\n- chats/First Chat.jsonl\n

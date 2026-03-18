@@ -1,0 +1,102 @@
+{
+  "report": "BrightWave Revenue Events",
+  "period": "2024-Q1",
+  "events": [
+    {
+      "id": "REV-001",
+      "type": "affiliate",
+      "amount": 127.50,
+      "date": "2024-01-16",
+      "content_id": "CONT-001",
+      "campaign_id": null
+    },
+    {
+      "id": "REV-002",
+      "type": "sponsorship",
+      "amount": "2500.00",
+      "date": "2024-01-20",
+      "content_id": "CONT-003",
+      "campaign_id": null
+    },
+    {
+      "id": "REV-003",
+      "type": "subscription",
+      "amount": 9.99,
+      "date": "2024-01-22",
+      "content_id": null,
+      "campaign_id": "CAMP-Q1-SUB"
+    },
+    {
+      "id": "REV-004",
+      "type": "affiliate",
+      "amount": 89.00,
+      "date": "01/23/2024",
+      "content_id": "CONT-002",
+      "campaign_id": null
+    },
+    {
+      "id": "REV-005",
+      "type": "subscription",
+      "amount": 9.99,
+      "date": "2024-01-25",
+      "content_id": null,
+      "campaign_id": "CAMP-Q1-SUB"
+    },
+    {
+      "id": "REV-006",
+      "type": "affiliate",
+      "amount": 215.00,
+      "date": "2024-01-28",
+      "content_id": "CONT-005",
+      "campaign_id": null
+    },
+    {
+      "id": "REV-007",
+      "type": "subscription",
+      "amount": "9.99",
+      "date": "2024-01-30",
+      "content_id": null,
+      "campaign_id": "CAMP-Q1-SUB"
+    },
+    {
+      "id": "REV-008",
+      "type": "sponsorship",
+      "amount": 1800.00,
+      "date": "2024-02-01",
+      "content_id": "CONT-004",
+      "campaign_id": null
+    },
+    {
+      "id": "REV-009",
+      "type": "affiliate",
+      "amount": 156.75,
+      "date": "2/5/2024",
+      "content_id": "CONT-001",
+      "campaign_id": ""
+    },
+    {
+      "id": "REV-010",
+      "type": "subscription",
+      "amount": 9.99,
+      "date": "2024-02-10",
+      "content_id": null,
+      "campaign_id": "CAMP-Q1-SUB"
+    },
+    {
+      "id": "REV-011",
+      "type": "affiliate",
+      "amount": 98.00,
+      "date": "2024-02-12",
+      "content_id": "CONT-003"
+    },
+    {
+      "id": "REV-012",
+      "type": "subscription",
+      "amount": "9.99",
+      "date": "2024-02-15",
+      "content_id": null,
+      "campaign_id": "CAMP-Q1-SUB"
+    }
+  ],
+  "notes": "Amount sometimes string; date formats vary; campaign_id/content_id may be missing or empty string."
+}

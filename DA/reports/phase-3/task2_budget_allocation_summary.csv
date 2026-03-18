@@ -1,0 +1,6 @@
+"rule","total_simulated_or_actual_clicks","notes"
+"equal_split","50386.87","sum over eval weeks"
+"prop_prior_clicks","56540.12","sum over eval weeks"
+"efficiency_weighted","53217.77","sum over eval weeks"
+"actual_total_clicks","50430","observed clicks those weeks (not simulated)"
+"best_rule_simulated","prop_prior_clicks","total=56540.12"

@@ -1,0 +1,7 @@
+"metric","detail","value"
+"A","predict_next_7d_equals_prev_7d_sum",4515
+"B","predict_next_7d_equals_7x_last_day_clicks",4746
+"actual","next_7d_channel_clicks_sum",1126
+"mae_A","abs(pred_A - actual)",3389
+"mae_B","abs(pred_B - actual)",3620
+"note","sparse_sample_see_docs",1

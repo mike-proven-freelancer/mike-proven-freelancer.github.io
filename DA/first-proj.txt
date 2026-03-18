@@ -1,0 +1,91 @@
+Data Scientist / Research Analyst for Predictive Modeling & Dataset Development
+Posted 3 hours ago
+
+Worldwide
+Summary
+
+We are looking for a strong data scientist or analytical researcher to help build and maintain structured datasets used to evaluate predictive decision models.
+
+This project involves combining information from multiple public sources and structuring it into research-grade datasets that can be used to test analytical frameworks and predictive systems.
+
+The work sits at the intersection of:
+
+• data science
+• research and pattern analysis
+• model evaluation
+• structured dataset design
+
+This is not a typical machine learning task with clean data. Much of the work involves organizing messy real-world information into structured formats that can be used for analysis.
+
+Responsibilities
+
+You will help with:
+
+• Collecting and structuring datasets from public sources
+• Reconstructing historical information snapshots
+• Designing data schemas for analytical models
+• Running backtests and comparing model outputs to historical outcomes
+• Identifying patterns across structured datasets
+• Improving evaluation frameworks over time
+
+Some work may involve combining traditional data science methods with newer AI-based analysis tools.
+
+Ideal Background
+
+We’re looking for someone who is comfortable working with messy datasets and ambiguous problems.
+
+Strong candidates typically have experience with:
+
+• Python and data analysis libraries
+• statistical analysis or machine learning
+• dataset construction and cleaning
+• experimental design or model evaluation
+• working with mixed structured and unstructured data
+
+Experience with research workflows or analytical frameworks is a plus.
+
+Nice to Have
+
+• experience with LLM-based workflows
+• experience building benchmark datasets
+• familiarity with historical data research
+• strong written documentation skills
+
+Project Scope
+
+Initial project:
+
+• help design and structure a benchmark dataset
+• build data pipelines and schemas
+• assist with model evaluation experiments
+
+If the collaboration goes well, this may expand into ongoing work improving the research system.
+
+To Apply
+
+Please include:
+
+A short description of similar analytical or data projects you've worked on
+
+Links to any relevant projects or code
+
+Your preferred tools or stack for working with datasets and model evaluation
+
+
+---
+
+The above is an actual job description from Upwork. We will complete this project in 3 phases. 
+
+The first phase is to reverse engineer what they want with a fitional company and fictional data sets to their 'real world' descriptions. The one thing I need is for all files created for these data sets and this project to be web browser friendly since I will post everything on my static portfolio site later after it's completed.
+
+In addition, with phase 1 I will need an explanation of the data and the data sets we are using. You will use this project to teach me how to be a data analyst. I imagine we will be using spreadsheets, SQL data tables, text documents of some form (not specific to text file types, but as they say it would be a real world data set, so show me what that would look like). As the description indicates we will be using Python and some libraries, but I also want to demonstrate the same tasks we will do in R as well.
+
+The second phase will be making these data sets. These should be synthetic data sets; they should not represent real people, it should never be possible to de-anonymize the data to figure out real people from it, and it should only be used to represent real patterns not real identities. However, I am new to this so I need the most realistic data sets, these should have over 100+ records and just use obviously fake names and contact information, but do use data that is normal for the social media industry as it seems this company might be either a social media provider, or they create social media and are trying to analyze the success of their content. Again I will need explanations about this data, I'm trying to learn how to be a data analyst I will need a lot of hand holding and to be told what data analysts will do with this data, how to clean it and process it into insights.
+
+The third and final phase is processing the data into insights and turning those insights into an action plan to create a structure to show the impact of the data and how to leverage it for a company to improve in some way financially (increase revenue and/or decrease expenses)
+
+through out the whole project and future work we do prompt me with questions you might need me to answer to improve the project and where I might find these answers. periodically quiz me with multiple choice questions to see what I have learned, I can't stress this enough, it needs to be realistic enough to sow me what I might be dealing with in the real world.
+
+Keep a record of what we do in a folder called mind so I can refer the next AI I need to use for context on what we do, organize mind to work for you and future AI, I won't be looking at it, this is just for you to better help me learn and grow as a data analyst. It will also be used to organize the plan of this project as it will indicate our phase and the list of tasks needed to complete this phase. It will also record concise responses I give to any prompts you give for me to better hold context of what we do.
+
+All that being said, our first phase is to reverse engineer the job description requirements, what does that mean how do we do that and what will we need to generate an example of this job for the context of a portfolio piece?

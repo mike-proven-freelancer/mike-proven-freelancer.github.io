@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BrightWave Media — Data Analytics Portfolio (Project 01)</title>
+  <style>
+    :root { --ink:#1a202c; --muted:#4a5568; --accent:#2b6cb0; --bg:#f7fafc; }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, Segoe UI, Roboto, sans-serif; color: var(--ink); background: var(--bg); margin: 0; line-height: 1.6; }
+    header { background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); color: #fff; padding: 2.5rem 1.5rem; text-align: center; }
+    header h1 { margin: 0 0 0.5rem; font-size: 1.75rem; }
+    header p { margin: 0; opacity: 0.9; max-width: 640px; margin-inline: auto; }
+    nav { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 0.75rem 1rem; text-align: center; }
+    nav a { color: var(--accent); margin: 0 1rem; font-weight: 600; }
+    main { max-width: 920px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    section { background: #fff; border-radius: 8px; padding: 1.5rem 1.75rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+    h2 { color: #1a365d; margin-top: 0; font-size: 1.25rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+    h3 { color: var(--muted); font-size: 1rem; margin: 1.25rem 0 0.5rem; }
+    .figure { margin: 1rem 0; text-align: center; }
+    .figure img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid #e2e8f0; }
+    .figure figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
+    .action-plan { background: #ebf8ff; border-left: 4px solid var(--accent); padding: 1rem 1.25rem; }
+    .action-plan ol { margin: 0.5rem 0 0 1.25rem; }
+    .action-plan li { margin: 0.5rem 0; }
+    footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BrightWave Media — Analytics &amp; Decisions</h1>
+    <p>Synthetic benchmark project: messy multi-source data → SQLite warehouse → KPIs, forecasts, and budget backtests. <strong>Project 01</strong> portfolio summary.</p>
+  </header>
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#visuals">Visuals</a>
+    <a href="#tasks">Analysis</a>
+    <a href="#action">Action plan</a>
+    <a href="project01-details.html">Data &amp; details →</a>
+  </nav>
+  <main>
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>This project mirrors an analyst role: <strong>ingest messy exports</strong> (JSON, CSV, TSV), <strong>load into a dimensional warehouse</strong>, then run <strong>engagement and revenue KPIs</strong>, a <strong>next-period clicks baseline</strong> (Task&nbsp;1), and a <strong>budget allocation backtest</strong> (Task&nbsp;2). All data is synthetic and safe for a public portfolio.</p>
+      <p><a href="project01-details.html">Open the data &amp; methodology page</a> for file locations, schema, and how to reproduce results.</p>
+    </section>
+
+    <section id="visuals">
+      <h2>Key visuals</h2>
+
+      <h3>Content performance</h3>
+      <figure class="figure">
+        <img src="assets/fig_content_clicks.png" alt="Bar chart of clicks by content" />
+        <figcaption>Total clicks by content piece in the loaded sample — retirement and budgeting themes lead.</figcaption>
+      </figure>
+
+      <h3>Revenue mix</h3>
+      <figure class="figure">
+        <img src="assets/fig_revenue_by_type.png" alt="Revenue by type pie chart" />
+        <figcaption>Sponsorship and affiliate drive most revenue in this slice; subscriptions appear as smaller ticket events.</figcaption>
+      </figure>
+
+      <h3>Newsletter trend</h3>
+      <figure class="figure">
+        <img src="assets/fig_newsletter_trend.png" alt="Newsletter open rate and CTR over time" />
+        <figcaption>Open rate and email CTR improve steadily — list hygiene and creative tests should continue.</figcaption>
+      </figure>
+    </section>
+
+    <section id="tasks">
+      <h2>Analysis highlights</h2>
+
+      <h3>Task 1 — Next-period engagement (clicks)</h3>
+      <p>Channel-level baseline forecast (teaching sample with sparse daily rows). Two simple baselines vs. actual “next week” sum.</p>
+      <figure class="figure">
+        <img src="assets/fig_task1_backtest.png" alt="Task 1 backtest bars" />
+        <figcaption>Baselines overshoot when the following week has fewer active days in the sample — documented in the repo.</figcaption>
+      </figure>
+
+      <h3>Task 2 — Budget allocation</h3>
+      <p>Compared allocating weekly spend across campaigns using <strong>equal split</strong>, <strong>proportional to prior-week clicks</strong>, and <strong>efficiency-weighted</strong> splits under a linear clicks-per-dollar model.</p>
+      <figure class="figure">
+        <img src="assets/fig_budget_allocation.png" alt="Budget allocation rule comparison" />
+        <figcaption>Proportional-to-prior-clicks yielded the highest total simulated clicks across evaluation weeks in this benchmark.</figcaption>
+      </figure>
+    </section>
+
+    <section id="action">
+      <h2>Action plan</h2>
+      <div class="action-plan">
+        <ol>
+          <li><strong>Content:</strong> Prioritize themes and titles similar to top click-getters (e.g. retirement, budgeting) for the next content calendar; A/B test headlines on FinTech and investing pieces to lift CTR.</li>
+          <li><strong>Revenue:</strong> Protect sponsorship pipeline; grow affiliate placements on high-traffic posts. Tie subscription campaigns to <strong>CAMP-Q1-SUB</strong>-style programs and track cost per sub vs. LTV.</li>
+          <li><strong>Newsletter:</strong> Maintain send quality — open rate and CTR are trending up; monitor unsubscribes and bounces; segment finance topics for relevance.</li>
+          <li><strong>Paid spend:</strong> Pilot shifting budget toward last week’s stronger click performers before moving to full efficiency-weighted rules; validate with holdout weeks as more daily data arrives.</li>
+          <li><strong>Data:</strong> Expand daily fact tables (more days per content/campaign) so per-content forecasts and allocation backtests stabilize; keep pipelines in Python and R for auditability.</li>
+          <li><strong>Portfolio:</strong> Publish this page plus linked artifacts on GitHub Pages or your static host; point recruiters to <code>project01-details.html</code> for reproducibility.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Synthetic data · Educational portfolio · <a href="project01-details.html">Data &amp; details</a></p>
+  </footer>
+</body>
+</html>

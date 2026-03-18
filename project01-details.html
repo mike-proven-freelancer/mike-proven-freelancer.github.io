@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project 01 — Data &amp; methodology</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #1a202c; }
+    h1 { color: #1a365d; }
+    a { color: #2b6cb0; }
+    code { background: #edf2f7; padding: 0.1rem 0.35rem; border-radius: 4px; }
+    ul { padding-left: 1.25rem; }
+    .back { margin-bottom: 1.5rem; }
+  </style>
+</head>
+<body>
+  <p class="back"><a href="project01.html">← Back to Project 01 main page</a></p>
+  <h1>Data, files &amp; methodology</h1>
+  <p>Paths are relative to the repository root (folder <code>DA/</code>). On GitHub, use the file browser from your repo.</p>
+
+  <h2>Main narrative</h2>
+  <ul>
+    <li><a href="project01.html"><strong>project01.html</strong></a> — visuals and action plan</li>
+  </ul>
+
+  <h2>Warehouse &amp; schema</h2>
+  <ul>
+    <li><code>warehouse/brightwave.sqlite</code> — SQLite database (open with DB Browser, VS Code SQLite extension, or Python/R)</li>
+    <li><code>warehouse/schema.sql</code> — table definitions</li>
+    <li><code>warehouse/seed_dimensions.sql</code>, <code>seed_campaigns.sql</code> — dimension seeds</li>
+  </ul>
+
+  <h2>Raw sources (messy)</h2>
+  <ul>
+    <li><code>raw/api/</code> — engagement &amp; revenue JSON</li>
+    <li><code>raw/vendor/</code> — campaign spend CSV, newsletter TSV</li>
+    <li><code>raw/notes/</code>, <code>raw/logs/</code> — notes &amp; sample logs</li>
+    <li><code>docs/raw-files-guide.md</code> — what each file contains</li>
+  </ul>
+
+  <h2>Phase 3 outputs (CSVs &amp; figures)</h2>
+  <ul>
+    <li><code>reports/phase-3/</code> — KPI extracts, Task 1 &amp; 2 metrics, revenue summaries</li>
+    <li><code>site/assets/</code> — chart PNGs used on the main page</li>
+  </ul>
+
+  <h2>Documentation</h2>
+  <ul>
+    <li><code>docs/project-overview.md</code> — project story</li>
+    <li><code>docs/evaluation-framework.md</code> — Task 1 &amp; 2 definitions</li>
+    <li><code>docs/phase3-task1-clicks-backtest.md</code>, <code>docs/phase3-task2-budget-allocation.md</code></li>
+    <li><code>docs/setup-from-scratch.md</code> — environment setup</li>
+  </ul>
+
+  <h2>Reproduce</h2>
+  <ol>
+    <li>Load warehouse: run <code>py python/load_*_to_warehouse.py</code> (or R equivalents) from repo root.</li>
+    <li>KPIs: <code>py python/phase3_eda_kpis.py</code></li>
+    <li>Task 1: <code>py python/phase3_task1_clicks_forecast.py</code></li>
+    <li>Task 2: <code>py python/phase3_task2_budget_allocation.py</code></li>
+    <li>This site: <code>py python/build_portfolio_site.py</code></li>
+  </ol>
+
+  <p><a href="project01.html">← Back to Project 01</a></p>
+</body>
+</html>
