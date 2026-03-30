@@ -7,9 +7,8 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+  <div id="background-3d" aria-hidden="true"></div>
   <header class="hero">
-    <div class="hero__shape hero__shape--1" aria-hidden="true"></div>
-    <div class="hero__shape hero__shape--2" aria-hidden="true"></div>
     <div class="hero__inner">
       <div class="hero__photo-wrap">
         <img src="profile.jpg" alt="Mike Proven" class="hero__photo" width="200" height="200">
@@ -62,5 +61,106 @@
   <footer class="footer">
     <p class="footer__text">Mike Proven · Data &amp; support</p>
   </footer>
+
+  <script type="module">
+    import * as THREE from "https://unpkg.com/three@0.162.0/build/three.module.js";
+
+    const container = document.getElementById("background-3d");
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.z = 18;
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    container.appendChild(renderer.domElement);
+
+    scene.add(new THREE.AmbientLight(0xffffff, 0.65));
+    const rimLight = new THREE.DirectionalLight(0xffffff, 0.75);
+    rimLight.position.set(4, 6, 8);
+    scene.add(rimLight);
+
+    const palette = [0x0369a1, 0x0ea5e9, 0xca8a04, 0x60a5fa, 0xf59e0b];
+    const spheres = [];
+    const sphereCount = 8;
+
+    const getViewportBounds = () => {
+      const fovRad = THREE.MathUtils.degToRad(camera.fov);
+      const height = 2 * Math.tan(fovRad / 2) * Math.abs(camera.position.z);
+      const width = height * camera.aspect;
+      return { width: width / 2, height: height / 2 };
+    };
+
+    const { width: startWidth, height: startHeight } = getViewportBounds();
+    for (let i = 0; i < sphereCount; i += 1) {
+      const radius = THREE.MathUtils.randFloat(0.8, 1.8);
+      const geometry = new THREE.SphereGeometry(radius, 36, 36);
+      const material = new THREE.MeshStandardMaterial({
+        color: palette[i % palette.length],
+        metalness: 0.12,
+        roughness: 0.28,
+        transparent: true,
+        opacity: 0.78
+      });
+      const mesh = new THREE.Mesh(geometry, material);
+      mesh.position.set(
+        THREE.MathUtils.randFloat(-startWidth + radius, startWidth - radius),
+        THREE.MathUtils.randFloat(-startHeight + radius, startHeight - radius),
+        THREE.MathUtils.randFloat(-4, 2)
+      );
+      scene.add(mesh);
+
+      spheres.push({
+        mesh,
+        radius,
+        velocity: new THREE.Vector2(
+          THREE.MathUtils.randFloatSpread(2.4),
+          THREE.MathUtils.randFloatSpread(2.4)
+        )
+      });
+    }
+
+    const clock = new THREE.Clock();
+    const animate = () => {
+      const delta = Math.min(clock.getDelta(), 0.04);
+      const time = clock.elapsedTime;
+      const { width, height } = getViewportBounds();
+
+      for (const item of spheres) {
+        const { mesh, radius, velocity } = item;
+        mesh.position.x += velocity.x * delta;
+        mesh.position.y += velocity.y * delta;
+
+        if (mesh.position.x > width - radius || mesh.position.x < -width + radius) {
+          velocity.x *= -1;
+          mesh.position.x = THREE.MathUtils.clamp(mesh.position.x, -width + radius, width - radius);
+        }
+        if (mesh.position.y > height - radius || mesh.position.y < -height + radius) {
+          velocity.y *= -1;
+          mesh.position.y = THREE.MathUtils.clamp(mesh.position.y, -height + radius, height - radius);
+        }
+
+        const drift = 0.28 * delta;
+        velocity.x += Math.sin(time * 0.6 + radius) * drift * 0.03;
+        velocity.y += Math.cos(time * 0.8 + radius) * drift * 0.03;
+        velocity.setLength(THREE.MathUtils.clamp(velocity.length(), 0.6, 2.2));
+
+        mesh.rotation.x += delta * (0.28 + radius * 0.05);
+        mesh.rotation.y += delta * (0.38 + radius * 0.05);
+      }
+
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    const onResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    };
+    window.addEventListener("resize", onResize);
+  </script>
 </body>
 </html>
