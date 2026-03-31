@@ -69,22 +69,17 @@
     const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 100);
     camera.position.z = 18;
 
-    scene.background = new THREE.Color(0x000000);
-
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x000000, 1);
     container.appendChild(renderer.domElement);
 
-    scene.add(new THREE.AmbientLight(0xffffff, 0.55));
-    const keyLight = new THREE.DirectionalLight(0xffffff, 0.95);
-    keyLight.position.set(5, 8, 10);
-    scene.add(keyLight);
-    const fillLight = new THREE.DirectionalLight(0xccccff, 0.35);
-    fillLight.position.set(-6, -4, 4);
-    scene.add(fillLight);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.65));
+    const rimLight = new THREE.DirectionalLight(0xffffff, 0.75);
+    rimLight.position.set(4, 6, 8);
+    scene.add(rimLight);
 
+    const palette = [0x0369a1, 0x0ea5e9, 0xca8a04, 0x60a5fa, 0xf59e0b];
     const spheres = [];
     const sphereCount = 10;
 
@@ -100,11 +95,13 @@
       const radius = THREE.MathUtils.randFloat(1, 2.2);
       const geometry = new THREE.SphereGeometry(radius, 36, 36);
       const material = new THREE.MeshStandardMaterial({
-        color: 0xffffff,
-        metalness: 0.15,
-        roughness: 0.35,
-        emissive: 0x222222,
-        emissiveIntensity: 0.08
+        color: palette[i % palette.length],
+        metalness: 0.2,
+        roughness: 0.2,
+        emissive: palette[i % palette.length],
+        emissiveIntensity: 0.12,
+        transparent: true,
+        opacity: 0.9
       });
       const mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(
