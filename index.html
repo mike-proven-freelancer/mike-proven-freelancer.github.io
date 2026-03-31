@@ -62,8 +62,9 @@
     <p class="footer__text">Mike Proven · Data &amp; support</p>
   </footer>
 
-  <script src="https://unpkg.com/three@0.162.0/build/three.min.js"></script>
-  <script>
+  <script type="module">
+    import * as THREE from "https://unpkg.com/three@0.162.0/build/three.module.js";
+
     const container = document.getElementById("background-3d");
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 100);
