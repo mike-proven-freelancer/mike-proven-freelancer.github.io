@@ -62,8 +62,9 @@
     <p class="footer__text">Mike Proven · Data &amp; support</p>
   </footer>
 
-  <script src="https://unpkg.com/three@0.162.0/build/three.min.js"></script>
-  <script>
+  <script type="module">
+    import * as THREE from "https://unpkg.com/three@0.162.0/build/three.module.js";
+
     const container = document.getElementById("background-3d");
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 100);
@@ -81,7 +82,7 @@
 
     const palette = [0x0369a1, 0x0ea5e9, 0xca8a04, 0x60a5fa, 0xf59e0b];
     const spheres = [];
-    const sphereCount = 10;
+    const sphereCount = 8;
 
     const getViewportBounds = () => {
       const fovRad = THREE.MathUtils.degToRad(camera.fov);
@@ -92,16 +93,14 @@
 
     const { width: startWidth, height: startHeight } = getViewportBounds();
     for (let i = 0; i < sphereCount; i += 1) {
-      const radius = THREE.MathUtils.randFloat(1, 2.2);
+      const radius = THREE.MathUtils.randFloat(0.8, 1.8);
       const geometry = new THREE.SphereGeometry(radius, 36, 36);
       const material = new THREE.MeshStandardMaterial({
         color: palette[i % palette.length],
-        metalness: 0.2,
-        roughness: 0.2,
-        emissive: palette[i % palette.length],
-        emissiveIntensity: 0.12,
+        metalness: 0.12,
+        roughness: 0.28,
         transparent: true,
-        opacity: 0.9
+        opacity: 0.78
       });
       const mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(
