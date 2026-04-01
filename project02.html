@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fictional bank — COBOL &amp; spending analysis (Project 02)</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .project02-page { max-width: 48rem; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .project02-page .back { margin-bottom: 2rem; }
+    .project02-page .back a { color: var(--blue-mid); font-weight: 600; text-decoration: none; }
+    .project02-page .back a:hover { text-decoration: underline; }
+    .project02-page h1 { margin: 0 0 1rem; font-size: 1.75rem; font-weight: 700; color: var(--blue-deep); }
+    .project02-page p { margin: 0 0 1rem; color: var(--grey-dark); line-height: 1.65; }
+    .project02-page .lead { font-size: 1.05rem; }
+    .project02-page .meta { font-size: 0.9375rem; color: var(--grey-mid); margin-bottom: 1.5rem; }
+    .project02-page .meta a { color: var(--blue-mid); font-weight: 600; }
+    .project02-page .figure { margin: 1.5rem 0; text-align: center; }
+    .project02-page .figure img { max-width: 100%; height: auto; border-radius: var(--radius-card); border: 1px solid var(--grey-light); }
+    .project02-page .figure figcaption { font-size: 0.875rem; color: var(--grey-mid); margin-top: 0.5rem; }
+    .project02-page h2 { font-size: 1.2rem; color: var(--blue-deep); margin: 2rem 0 0.75rem; }
+    .project02-page ul { margin: 0 0 1rem; padding-left: 1.25rem; color: var(--grey-dark); }
+    .project02-page li { margin: 0.35rem 0; }
+  </style>
+</head>
+<body>
+  <main class="project02-page">
+    <p class="back"><a href="index.html">← Back to portfolio</a></p>
+
+    <h1>Fictional bank — COBOL transactions &amp; Python spending views</h1>
+    <p class="lead">
+      A minimal <strong>COBOL</strong> program simulates deposits, purchases, and withdrawals, writes rows to <code>transactions.csv</code>,
+      and a small <strong>pandas</strong> script turns that file into category and merchant totals — bridging a legacy-style data feed with everyday analytics.
+    </p>
+    <p class="meta">
+      <a href="project02-details.html">Files, commands &amp; CSV layout →</a>
+      ·
+      <a href="blog02.html">Project blog →</a>
+    </p>
+
+    <h2>What this demonstrates</h2>
+    <ul>
+      <li>Batch-style transaction lines with merchant and category fields (fixed-width padding from COBOL).</li>
+      <li>Cleaning and typing in Python: strip strings, parse amounts and dates.</li>
+      <li>Outflow-focused views: purchases and withdrawals summarized by category and merchant.</li>
+    </ul>
+
+    <h2>Charts (from <code>spending_analysis.py</code>)</h2>
+    <figure class="figure">
+      <img src="DA-COBOL/images/charts/spend_by_category.png" alt="Bar chart of outflows by category">
+      <figcaption>Outflows (purchases + withdrawals) summed by category.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="DA-COBOL/images/charts/spend_by_merchant.png" alt="Horizontal bar chart of outflows by merchant">
+      <figcaption>Same slice of transactions, grouped by merchant.</figcaption>
+    </figure>
+
+    <p>
+      The sample has only four rows — enough to prove the pipeline. A larger run would make the charts more meaningful for “habits” storytelling.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">Mike Proven · Data &amp; support</p>
+  </footer>
+</body>
+</html>

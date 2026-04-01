@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 02 — Files &amp; how to reproduce</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .details-page { max-width: 42rem; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .details-page .back { margin-bottom: 2rem; }
+    .details-page .back a { color: var(--blue-mid); font-weight: 600; text-decoration: none; }
+    .details-page .back a:hover { text-decoration: underline; }
+    .details-page h1 { margin: 0 0 1rem; font-size: 1.5rem; color: var(--blue-deep); }
+    .details-page h2 { font-size: 1.2rem; color: var(--blue-deep); margin: 1.75rem 0 0.5rem; }
+    .details-page p, .details-page li { color: var(--grey-dark); line-height: 1.65; }
+    .details-page code { font-size: 0.9em; background: var(--off-white); padding: 0.15rem 0.4rem; border-radius: 4px; border: 1px solid rgba(15, 23, 42, 0.08); }
+    .details-page pre { background: #0f172a; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: var(--radius-card); overflow-x: auto; font-size: 0.875rem; }
+    .details-page ul { padding-left: 1.25rem; }
+    .details-page li { margin: 0.4rem 0; }
+  </style>
+</head>
+<body>
+  <main class="details-page">
+    <p class="back"><a href="project02.html">← Back to Project 02</a></p>
+    <h1>Project 02 — Files &amp; reproduction</h1>
+    <p>Paths are relative to the repository root (this portfolio repo).</p>
+
+    <h2>What lives where</h2>
+    <ul>
+      <li><code>DA-COBOL/cobol/bank_main.cob</code> — main COBOL program; writes <code>DA-COBOL/data/transactions.csv</code>.</li>
+      <li><code>DA-COBOL/cobol/hello.cob</code> — tiny compile check.</li>
+      <li><code>DA-COBOL/analysis/spending_analysis.py</code> — loads CSV, prints summaries, saves PNGs under <code>DA-COBOL/images/charts/</code>.</li>
+      <li><code>DA-COBOL/requirements.txt</code> — Python dependencies (pandas, matplotlib).</li>
+      <li><code>DA-COBOL/README.md</code> — short local notes for the folder.</li>
+    </ul>
+
+    <h2>CSV shape (no header row)</h2>
+    <p>Columns in order: <code>txn_id</code>, <code>account_id</code>, <code>txn_date</code>, <code>txn_type</code>, <code>amount</code>, <code>balance_after</code>, <code>merchant</code>, <code>category</code>. String fields may be padded with spaces from COBOL; the Python script strips them.</p>
+
+    <h2>COBOL (Windows)</h2>
+    <p>From <code>DA-COBOL</code>:</p>
+<pre>cobc -x cobol\bank_main.cob -o bank_main.exe
+.\bank_main.exe</pre>
+    <p>Compile output is <code>bank_main.exe</code> in <code>DA-COBOL</code> (ignored by git if listed in <code>.gitignore</code>).</p>
+
+    <h2>Python</h2>
+    <p>From <code>DA-COBOL</code>:</p>
+<pre>py -m pip install -r requirements.txt
+py analysis\spending_analysis.py</pre>
+    <p>Charts are written to <code>DA-COBOL/images/charts/</code> when matplotlib is available.</p>
+
+    <h2>Site pages</h2>
+    <ul>
+      <li><a href="project02.html">project02.html</a> — overview and chart embeds.</li>
+      <li><a href="blog02.html">blog02.html</a> — short narrative.</li>
+    </ul>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">Mike Proven · Data &amp; support</p>
+  </footer>
+</body>
+</html>

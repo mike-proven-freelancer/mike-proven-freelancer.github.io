@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fictional bank — COBOL &amp; analysis — Blog</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .blog-page { max-width: 42rem; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .blog-page .back { margin-bottom: 2rem; }
+    .blog-page .back a { color: var(--blue-mid); font-weight: 600; text-decoration: none; }
+    .blog-page .back a:hover { text-decoration: underline; }
+    .blog-page .meta { font-size: 0.9375rem; color: var(--grey-mid); margin-bottom: 1.5rem; line-height: 1.6; }
+    .blog-page .meta a { color: var(--blue-mid); font-weight: 600; }
+    .blog-page .figure { margin: 1.5rem 0; text-align: center; }
+    .blog-page .figure img { max-width: 100%; height: auto; border-radius: var(--radius-card); border: 1px solid var(--grey-light); }
+    .blog-page h1 { margin: 0 0 1rem; font-size: 1.75rem; font-weight: 700; color: var(--blue-deep); }
+    .blog-page p { margin: 0 0 1rem; color: var(--grey-dark); }
+  </style>
+</head>
+<body>
+  <main class="blog-page">
+    <p class="back"><a href="index.html">← Back to portfolio</a></p>
+
+    <p class="meta">Code and data layout: <a href="project02-details.html">Project 02 — files &amp; reproduction</a> · <a href="project02.html">Project summary</a></p>
+
+    <figure class="figure">
+      <img src="DA-COBOL/images/charts/spend_by_category.png" alt="Outflows by category chart">
+    </figure>
+
+    <h1>Fictional bank: COBOL out, Python in</h1>
+
+    <p>
+      I had studied and received a specialized certification as an IBM Mainframe Developer, and wanted to show my understanding of generating .csv files from a COBOL database so that it can be processed in Python and Pandas for the sake of analysis. In this case it's just demonstrating one banking client's spending habits. These habits can be analyzed to determine what someone is spending money on. In a real-world project we can take the data of a person's spending habits and determine risky behavior for health insurance companies or for law enforcement to investigate illegal activity such as money laundering. This data can be packaged and served to any number of customers who would want to know more about a person's spending habits.
+    </p>
+    <p>
+      I wanted to demonstrate one portfolio project that shows my understanding of both sides of the data pipeline and programming needed to analyze legacy data. This project shows a small COBOL program that behaves like a batch job writing transaction lines,
+      and a short Python pass that turns those lines into something a stakeholder could glance at — totals by category and merchant.
+    </p>
+    <p>
+      The CSV has no header (the COBOL program just writes rows), so the analysis script names the columns explicitly and strips the padding
+      COBOL adds to fixed-length fields. That friction is the point: real handoffs from legacy feeds often look like this.
+    </p>
+    <p>
+      With only four transactions, the charts are more proof-of-pipeline than a deep “habits” study. The next step, when I pick the project back up,
+      is more rows and clearer stories — but the bridge from <code>bank_main.cob</code> to <code>spending_analysis.py</code> is in place.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">Mike Proven · Data &amp; support</p>
+  </footer>
+</body>
+</html>

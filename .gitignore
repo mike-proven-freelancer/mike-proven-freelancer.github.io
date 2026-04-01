@@ -1,0 +1,5 @@
+gnucobol-3.2_win/
+
+# Local COBOL build artifacts
+DA-COBOL/*.exe
+DA-COBOL/**/*.exe
