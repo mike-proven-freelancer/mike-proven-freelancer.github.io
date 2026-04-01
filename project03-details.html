@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 03 - Files and reproduction</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .details-page { max-width: 42rem; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .details-page .back { margin-bottom: 2rem; }
+    .details-page .back a { color: var(--blue-mid); font-weight: 600; text-decoration: none; }
+    .details-page .back a:hover { text-decoration: underline; }
+    .details-page h1 { margin: 0 0 1rem; font-size: 1.5rem; color: var(--blue-deep); }
+    .details-page h2 { font-size: 1.2rem; color: var(--blue-deep); margin: 1.75rem 0 0.5rem; }
+    .details-page p, .details-page li { color: var(--grey-dark); line-height: 1.65; }
+    .details-page code { font-size: 0.9em; background: var(--off-white); padding: 0.15rem 0.4rem; border-radius: 4px; border: 1px solid rgba(15, 23, 42, 0.08); }
+    .details-page pre { background: #0f172a; color: #e2e8f0; padding: 1rem 1.25rem; border-radius: var(--radius-card); overflow-x: auto; font-size: 0.875rem; }
+    .details-page ul { padding-left: 1.25rem; }
+    .details-page li { margin: 0.4rem 0; }
+  </style>
+</head>
+<body>
+  <main class="details-page">
+    <p class="back"><a href="project03.html">← Back to Project 03</a></p>
+    <h1>Project 03 - files and how to reproduce</h1>
+    <p>Paths are relative to the repository root.</p>
+
+    <h2>What lives where</h2>
+    <ul>
+      <li><code>DA-Prediction/generate_prediction_assets.py</code> - generates source data, metrics, charts, and forecast outputs.</li>
+      <li><code>DA-Prediction/data/inventory_sales_source.xlsx</code> - single source file (36 months x monthly columns).</li>
+      <li><code>DA-Prediction/data/inventory_sales_source.csv</code> - CSV mirror for easy inspection.</li>
+      <li><code>DA-Prediction/data/forecast_2_months.csv</code> - two-month forecast and scenario values.</li>
+      <li><code>DA-Prediction/data/insights.json</code> - quick summary values used for narrative checks.</li>
+      <li><code>DA-Prediction/images/charts/*.png</code> - figures used in project and blog pages.</li>
+    </ul>
+
+    <h2>Main monthly columns</h2>
+    <p>Examples (for each brand):</p>
+    <ul>
+      <li><code>a_brand_inventory</code>, <code>a_brand_sales</code>, <code>a_brand_pct_sold</code></li>
+      <li><code>a_brand_pct_sold_mom_change_pp</code>, <code>a_brand_pct_sold_yoy_change_pp</code></li>
+      <li><code>a_brand_inventory_mom_change_pct</code>, <code>a_brand_inventory_yoy_change_pct</code></li>
+      <li><code>a_brand_sales_mom_change_pct</code>, <code>a_brand_sales_yoy_change_pct</code></li>
+    </ul>
+    <p>The same columns exist for <code>b_brand</code> and <code>c_brand</code>, plus totals like <code>total_inventory</code>, <code>total_sales</code>, and <code>total_pct_sold</code>.</p>
+
+    <h2>Run steps (Windows)</h2>
+<pre>py -m pip install -r DA-Prediction\requirements.txt
+py DA-Prediction\generate_prediction_assets.py</pre>
+    <p>Re-running updates the dataset window to the latest 36 months up to the current month.</p>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">Mike Proven · Data &amp; support</p>
+  </footer>
+</body>
+</html>

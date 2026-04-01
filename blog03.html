@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brick N' Mortar forecasting - Blog</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .blog-page { max-width: 42rem; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .blog-page .back { margin-bottom: 2rem; }
+    .blog-page .back a { color: var(--blue-mid); font-weight: 600; text-decoration: none; }
+    .blog-page .back a:hover { text-decoration: underline; }
+    .blog-page .meta { font-size: 0.9375rem; color: var(--grey-mid); margin-bottom: 1.5rem; line-height: 1.6; }
+    .blog-page .meta a { color: var(--blue-mid); font-weight: 600; }
+    .blog-page .figure { margin: 1.5rem 0; text-align: center; }
+    .blog-page .figure img { max-width: 100%; height: auto; border-radius: var(--radius-card); border: 1px solid var(--grey-light); }
+    .blog-page h1 { margin: 0 0 1rem; font-size: 1.75rem; font-weight: 700; color: var(--blue-deep); }
+    .blog-page p { margin: 0 0 1rem; color: var(--grey-dark); line-height: 1.65; }
+  </style>
+</head>
+<body>
+  <main class="blog-page">
+    <p class="back"><a href="index.html">← Back to portfolio</a></p>
+
+    <p class="meta">Code and data layout: <a href="project03-details.html">Project 03 - files and reproduction</a> · <a href="project03.html">Project summary</a></p>
+
+    <figure class="figure">
+      <img src="DA-Prediction/images/charts/forecast_with_scenario_band.png" alt="Forecast scenario chart">
+    </figure>
+
+    <h1>Inventory forecasting with one monthly source file</h1>
+
+    <p>
+      For this project I wanted a single source of truth: one XLSX table where each row is one month and each column captures either inventory,
+      sales, sell-through, or comparison metrics. I generated 36 months for three products (a-brand, b-brand, c-brand) and made sure the values
+      were not perfectly clean. Real data has weird months, uneven demand, and occasional inventory shocks.
+    </p>
+    <p>
+      The core question is practical: how much inventory should be ordered for the next two months? Instead of jumping into a complex model,
+      I started with transparent baseline logic and trend-based comparisons. The script computes month-over-month and same-month-last-year changes,
+      then uses recent behavior to produce a simple two-month forecast and a scenario band.
+    </p>
+    <p>
+      I kept all non-HTML assets in <code>DA-Prediction</code> so this can be rerun at any time. Re-running the script refreshes the 36-month window up to the
+      current month and rebuilds the charts. That makes the project easy to explain in interviews: one source file, clear feature columns, and a
+      forecasting approach that can be challenged and improved.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">Mike Proven · Data &amp; support</p>
+  </footer>
+</body>
+</html>

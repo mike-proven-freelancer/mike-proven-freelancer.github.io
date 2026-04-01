@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brick N' Mortar - Inventory forecasting (Project 03)</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .project03-page { max-width: 48rem; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .project03-page .back { margin-bottom: 2rem; }
+    .project03-page .back a { color: var(--blue-mid); font-weight: 600; text-decoration: none; }
+    .project03-page .back a:hover { text-decoration: underline; }
+    .project03-page h1 { margin: 0 0 1rem; font-size: 1.75rem; font-weight: 700; color: var(--blue-deep); }
+    .project03-page p { margin: 0 0 1rem; color: var(--grey-dark); line-height: 1.65; }
+    .project03-page .lead { font-size: 1.05rem; }
+    .project03-page .meta { font-size: 0.9375rem; color: var(--grey-mid); margin-bottom: 1.5rem; }
+    .project03-page .meta a { color: var(--blue-mid); font-weight: 600; }
+    .project03-page .figure { margin: 1.5rem 0; text-align: center; }
+    .project03-page .figure img { max-width: 100%; height: auto; border-radius: var(--radius-card); border: 1px solid var(--grey-light); }
+    .project03-page .figure figcaption { font-size: 0.875rem; color: var(--grey-mid); margin-top: 0.5rem; }
+    .project03-page h2 { font-size: 1.2rem; color: var(--blue-deep); margin: 2rem 0 0.75rem; }
+    .project03-page ul { margin: 0 0 1rem; padding-left: 1.25rem; color: var(--grey-dark); }
+    .project03-page li { margin: 0.35rem 0; }
+  </style>
+</head>
+<body>
+  <main class="project03-page">
+    <p class="back"><a href="index.html">← Back to portfolio</a></p>
+
+    <h1>Brick N' Mortar merchant - inventory forecasting starter</h1>
+    <p class="lead">
+      This project uses one generated monthly XLSX data source with 36 rows (one row per month) across
+      <strong>a-brand</strong>, <strong>b-brand</strong>, and <strong>c-brand</strong>. Each row includes inventory, sales, sell-through percentage,
+      month-over-month changes, and same-month-last-year comparisons.
+    </p>
+    <p class="meta">
+      <a href="project03-details.html">Files, columns, and reproduction steps →</a>
+      ·
+      <a href="blog03.html">Project blog →</a>
+    </p>
+
+    <h2>What this demonstrates</h2>
+    <ul>
+      <li>Single source of truth in <code>DA-Prediction/data/inventory_sales_source.xlsx</code>.</li>
+      <li>Messy but realistic synthetic data with trend, seasonality, and random shocks.</li>
+      <li>Brand-level and total KPI calculations for sell-through, MoM, and YoY changes.</li>
+      <li>Simple two-month forecast and scenario band based on recent trend behavior.</li>
+    </ul>
+
+    <h2>Charts (generated with pandas + matplotlib)</h2>
+    <figure class="figure">
+      <img src="DA-Prediction/images/charts/total_inventory_vs_sales.png" alt="Total inventory and sales trend">
+      <figcaption>Total inventory versus total sales over the latest 36 months.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="DA-Prediction/images/charts/brand_pct_sold_trends.png" alt="Percent sold by brand trend lines">
+      <figcaption>Sell-through percentage trends by brand.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="DA-Prediction/images/charts/forecast_with_scenario_band.png" alt="Two-month forecast with scenario band">
+      <figcaption>Two-month forecast with a simple low/high scenario range.</figcaption>
+    </figure>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">Mike Proven · Data &amp; support</p>
+  </footer>
+</body>
+</html>

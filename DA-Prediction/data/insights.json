@@ -1,0 +1,27 @@
+{
+  "current_month": "April 2026",
+  "total_inventory": 318980.47,
+  "total_sales": 183202.09,
+  "total_pct_sold": 57.43,
+  "best_brand_by_pct_sold": "a_brand",
+  "best_brand_pct_sold": 57.81,
+  "weakest_brand_by_pct_sold": "b_brand",
+  "weakest_brand_pct_sold": 56.8,
+  "average_total_pct_sold_12m": 60.5,
+  "forecast_rows": [
+    {
+      "month": "2026-05",
+      "forecast_total_sales": 188081.45,
+      "implied_inventory_order": 329187.8,
+      "low_case_sales_minus_10pct": 169273.31,
+      "high_case_sales_plus_8pct": 203127.97
+    },
+    {
+      "month": "2026-06",
+      "forecast_total_sales": 193861.43,
+      "implied_inventory_order": 339304.16,
+      "low_case_sales_minus_10pct": 174475.29,
+      "high_case_sales_plus_8pct": 209370.34
+    }
+  ]
+}
