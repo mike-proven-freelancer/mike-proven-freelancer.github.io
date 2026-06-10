@@ -208,10 +208,12 @@ body {
   color: var(--blue-deep);
 }
 
-.projects__coming {
+.projects__intro {
   margin: 0 0 2rem;
   font-size: 1rem;
   color: var(--grey-mid);
+  max-width: 42rem;
+  line-height: 1.6;
 }
 
 .projects__grid {
@@ -341,6 +343,16 @@ body {
 .footer__text {
   margin: 0;
   font-size: 0.875rem;
+  color: var(--blue-pale);
+}
+
+.footer__link {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer__link:hover {
   color: var(--blue-pale);
 }
 
